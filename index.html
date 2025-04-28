@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Paradise Living Hotel</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #2d89ef;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+	.logo {
+	  width: 90px; /* adjust size as needed */
+	  height: auto;
+	}
+    nav {
+      background-color: #1e5799;
+      padding: 10px 20px;
+      position: sticky;
+      top: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .nav-left, .nav-right {
+      display: flex;
+      align-items: center;
+    }
+    .nav-left a, .nav-right a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .nav-right a {
+      background-color: #337ab7;
+      padding: 5px 10px;
+      border-radius: 4px;
+    }
+    .nav-right a:hover {
+      background-color: #285f8f;
+    }
+    .hero {
+      position: relative;
+      height: 300px;
+      background: url('background.jpg') center/cover no-repeat;
+    }
+    .hero .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 36px;
+      text-shadow: 2px 2px 4px black;
+    }
+    .content {
+      padding: 20px;
+    }
+    h2 {
+      text-align: center;
+    }
+    .blog-preview {
+      max-width: 800px;
+      margin: 0 auto 20px;
+      padding: 10px;
+      background-color: #f2f2f2;
+      border-radius: 8px;
+    }
+    .blog-preview h3 {
+      margin-top: 0;
+    }
+	
+	.services-table {
+	  width: 100%;
+	  border-collapse: separate;
+	  border-spacing: 20px;
+	  text-align: center;
+	}
+
+	.services-table td {
+	  vertical-align: top;
+	}
+
+	.services-table img {
+	  width: 87%;
+	  max-width: 200px;
+	  border-radius: 12px;
+	  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+	}
+
+	.services-description {
+	  margin-top: 10px;
+	  font-size: 15px;
+	  color: #444;
+	}
+	
+	@media (max-width: 768px) {
+	  .services-table tr {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	  }
+	  }
+		.services-table td {
+		margin-bottom: 20px;
+	  }
+
+	.slider-container,
+	.slideshow-container {
+	  max-width: 100%;
+	  position: relative;
+	  margin: 20px auto;
+	  height: auto;
+	  overflow: hidden;
+	}
+	
+	.slide{
+	display: none;
+	}
+
+	.slide img {
+	  width: 100%;
+	  max-height: 200px;
+	  object-fit: cover;
+	  border-radius: 12px;
+	}
+	
+	.button-row {
+	  display: flex;
+	  justify-content: center;
+	  margin-top: 10px;
+	  gap: 8px;
+	}
+
+	.prev,
+	.next {
+	  cursor: pointer;
+	  padding: 6px 14px;
+	  color: white;
+	  font-size: 14px;
+	  font-weight: 600;
+	  background-color: #333;
+	  border: none;
+	  border-radius: 6px;
+	  transition: background-color 0.3s ease;
+	}
+	
+	.prev:hover,
+	.next:hover {
+	  background-color: #555;
+	}
+	
+	.next {
+	  right: 0;
+	}
+	.prev {
+	  left: 0;
+	}
+
+    .activity-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 20px;
+    text-align: center;
+  }
+  .activity-table td {
+    vertical-align: top;
+  }
+  .activity-table img {
+    width: 100%;
+    max-width: 250px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  .activity-description {
+    margin-top: 10px;
+    font-size: 15px;
+    color: #444;
+  }
+
+  @media (max-width: 768px) {
+    .activity-table tr {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .activity-table td {
+      margin-bottom: 20px;
+    }
+	}
+	
+	.slider-container,
+	.slideshow-container {
+	  max-width: 100%;
+	  position: relative;
+	  margin: 20px auto;
+	  height: auto;
+	  overflow: hidden;
+	}
+
+	.slide {
+	display: none;
+	}
+
+	.slide img {
+	  width: 100%;
+	  max-height: 200px;
+	  object-fit: cover;
+	  border-radius: 12px;
+	}
+	
+	.button-row {
+	  display: flex;
+	  justify-content: center;
+	  margin-top: 10px;
+	  gap: 8px;
+	}
+
+	.prev,
+	 .next {
+		 cursor: pointer;
+		 padding: 6px 14px;
+		 color: white;
+		 font-size: 14px;
+		 font-weight: 600;
+		 background-color: #333;
+		 border: none;
+		 border-radius: 6px;
+		 transition: background-color 0.3s ease;
+		}
+	prev:hover,
+	.next:hover {
+	  background-color: #555;
+	}
+	
+  .next {
+    right: 0;
+  }
+
+  .prev {
+    left: 0;
+  }
+  
+	.form-section {
+      background-color: #f9f9f9;
+      padding: 2rem;
+      margin-top: 2rem;
+      border-radius: 8px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .form-section form {
+      max-width: 100%;
+    }
+
+    .form-section label {
+      display: block;
+      margin: 10px 0 5px;
+      font-weight: bold;
+    }
+
+    .form-section input,
+    .form-section select,
+    .form-section textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+
+    .form-section button {
+      background-color: #444;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    .form-section button:hover {
+      background-color: #333;
+    }
+		
+	  footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 15px;
+    }
+	
+  </style>
+</head>
+<body>
+
+  <header>
+	<div class="header-container">
+		<img src="hotel logo.png" alt="Paradise Living Hotel Logo" class="logo">
+		<div>
+		<h1>Paradise Living Hotel</h1>
+		<p>Your dream escape</p>
+		</div>
+	</div>
+    <marquee behavior="scroll" direction="left">“More than Service - It’s Our Way of Life”</marquee>
+  </header>
+
+  <nav>
+    <div class="nav-left">
+      <a href="#home">Home</a>
+      <a href="#services">Our Services</a>
+      <a href="#activities">Activities</a>
+    </div>
+    <div class="nav-right">
+      <a href="#blogs" target="_self">Blogs</a>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <div class="overlay">
+      Relax. Enjoy. Repeat.
+    </div>
+  </div>
+
+  <div class="content">
+    <h2 id="home">Welcome</h2>
+    <p style="text-align:center;">We are a beachfront hotel offering peace, comfort, and beautiful ocean views.</p>
+
+    <h2 id="services">Our Services</h2>
+    <p style="text-align:center;">Comfortable rooms, excellent dining, and friendly staff await your stay.</p>
+	<table class="services-table">
+	<tr>
+		<td>
+			<div class="slideshow-container" id="bedroomSlides">
+				<div class="slide"><img src="bedroom1.jpg" alt="bedroom1"></div>
+				<div class="slide"><img src="bedroom2.jpg" alt="bedroom2"></div>
+				<div class="slide"><img src="Bedroom3.jpg" alt="Bedroom3"></div>
+				<div class="slide"><img src="Bedroom4.jpg" alt="Bedroom4"></div>
+				<div class="slide"><img src="room1.jpg" alt="room1"></div>
+				<div class="slide"><img src="room2.jpg" alt="room2"></div>
+				<div class="slide"><img src="room3.jpg" alt="room3"></div>
+				<a class="prev" onclick="plusSlides(-1, 0)">❮</a>
+				<a class="next" onclick="plusSlides(1, 0)">❯</a>
+			</div>
+			<p class="services-description">To make you feels comfortable with our room service .</p>
+		</td>
+		<td>
+		<div class="slideshow-container" id="barSlides">
+			<div class="slide"><img src="bar1.jpg" alt="Bar1"></div>
+			<div class="slide"><img src="bar2.jpg" alt="Bar2"></div>
+			<div class="slide"><img src="bar3.jpg" alt="Bar3"></div>
+			<a class="prev" onclick="plusSlides(-1, 1)">❮</a>
+			<a class="next" onclick="plusSlides(1, 1)">❯</a>
+		</div>
+			<p class="services-description">Enjoy our cold beer from our bar counter.</p>
+			
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<div class="slideshow-container" id="RestaurantSlides">
+				<div class="slide"><img src="Restaurant 1.jpg" alt="Restaurant1"></div>
+				<div class="slide"><img src="Restaurant 2.jpg" alt="Restaurant2"></div>
+				<div class="slide"><img src="Restaurant 3.jpg" alt="Restaurant3"></div>
+				<a class="prev" onclick="plusSlides(-1, 2)">❮</a>
+				<a class="next" onclick="plusSlides(1, 2)">❯</a>
+			</div>
+			<p class="services-description">Enjoy and order your favourite food and taste our different kind of recipe from our restaurant .</p>
+		</td>
+	<td>
+			<div class="slideshow-container" id="MassageSlides">
+				<div class="slide"><img src="Massage 1.jpg" alt="Massage1"></div>
+				<div class="slide"><img src="Massage 2.jpg" alt="Massage2"></div>
+				<div class="slide"><img src="Massage 3.jpg" alt="Massage3"></div>
+				<a class="prev" onclick="plusSlides(-1, 3)">❮</a>
+				<a class="next" onclick="plusSlides(1, 3)">❯</a>
+			</div>
+			<p class="services-description">To make your body feels refer to our massage service .</p>
+		</td>
+	</tr>
+	</table>
+    <h2 id="activities">Activities</h2>
+	<p style="text-align:center;">Enjoy beach walks, sunset views, spa treatments, and local excursions.</p>
+	
+<table class="activity-table">
+  <tr>
+    <td>
+		<div class="slideshow-container" id="gymSlides">
+			<div class="slide"><img src="gym1.jpg" alt="gym1"></div>
+			<div class="slide"><img src="gym2.jpg" alt="gym2"></div>
+			<a class="prev" onclick="plusSlides(-1, 4)">❮</a>
+			<a class="next" onclick="plusSlides(1, 4)">❯</a>
+		</div>
+			<p class="activity-description">To make your body fully energy and strong .</p>
+    </td>
+    <td>
+      <img src="sunset1.jpg" alt="Sunset View">
+      <p class="activity-description">Unwind with breathtaking sunsets every evening.</p>
+    </td>
+    <td>
+		<div class="slideshow-container" id="playgroundSlides">
+			<div class="slide"><img src="kid-playground.jpg" alt="kid playground"></div>
+			<div class="slide"><img src="playground1.jpg" alt="playground1"></div>
+			<div class="slide"><img src="playground2.jpg" alt="playground2"></div>
+			<div class="slide"><img src="playground3.jpg" alt="playground3"></div>
+			<div class="slide"><img src="playground4.jpg" alt="playground4"></div>
+			<a class="prev" onclick="plusSlides(-1, 5)">❮</a>
+			<a class="next" onclick="plusSlides(1, 5)">❯</a>
+		</div>
+      <p class="activity-description">To change your children's day into a memorable time  .</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+	<div class="slideshow-container" id="golfSlides">
+		<div class="slide"><img src="golfarea.jpg" alt="Golf Activity"></div>
+		<div class="slide"><img src="golf1.jpg" alt="Golf1"></div>
+		<div class="slide"><img src="golf2.jpg" alt="Golf2"></div>
+		<a class="prev" onclick="plusSlides(-1, 6)">❮</a>
+		<a class="next" onclick="plusSlides(1, 6)">❯</a>
+	</div>
+      <p class="activity-description">Hit the greens with our beautiful seaside golf area.</p>
+    </td>
+    <td>
+		<div class="slideshow-container" id="kayakSlides">
+			<div class="slide"><img src="Kayak activities 2.jpg" alt="Kayaking2"></div>
+			<div class="slide"><img src="Kayak activities 3.jpg" alt="Kayaking3"></div>
+			<a class="prev" onclick="plusSlides(-1, 7)">❮</a>
+			<a class="next" onclick="plusSlides(1, 7)">❯</a>
+		</div>
+      <p class="activity-description">Explore the coast with guided kayaking tours.</p>
+    </td>
+    <td>
+		<div class="slideshow-container" id="culturalSlides">
+			<div class="slide"><img src="cultural-show.jpg" alt="Cultural Show"></div>
+			<div class="slide"><img src="performance1.jpg" alt="performance1"></div>
+			<div class="slide"><img src="performance2.jpg" alt="performance2"></div>
+			<a class="prev" onclick="plusSlides(-1, 8)">❮</a>
+			<a class="next" onclick="plusSlides(1, 8)">❯</a>
+		</div>
+      <p class="activity-description">Experience authentic local dances and performances.</p>
+    </td>
+  </tr>
+</table>
+	</div>
+
+    <h2 id="blogs">Latest Blog Posts</h2>
+    <div class="blog-preview">
+      <h3>History of My Paradise Living Hotel</h3>
+      <p>
+	  Paradise Living Hotel was officially established on 21 May 2007 with a vision to provide a peaceful 
+	  and relaxing escape for travelers from around the world. 
+	  Located in a serene and picturesque setting, the hotel started as a small, 
+	  family-run business with a strong commitment to comfort, quality service, and island hospitality.
+
+     <p>Over the years, Paradise Living Hotel has grown into a well-loved destination, 
+	 known for its warm atmosphere, personalized care, and attention to detail. 
+	 Through dedication and continuous improvement, the hotel has expanded its services 
+	 and facilities to meet the evolving needs of guests, while still maintaining 
+	 the charm and tranquility that inspired its creation.</p>
+
+     <p>Today, Paradise Living Hotel stands as a symbol of relaxation and excellence, 
+	 welcoming guests with open arms and offering a true taste of paradise.</p>
+	 
+    </div>
+    <div class="blog-preview">
+      <h3>Meet Our Staff</h3>
+      <p>Meet our beloved staff who work hard and collaborate together through this hotel journey</p>
+      
+    </div>
+	
+	  <div class="blog-preview">
+	  <h3>Leave a Comment</h3>
+	  <form id="commentForm">
+		<textarea id="commentInput" rows="4" cols="50" placeholder="Write your comment here..." required></textarea><br><br>
+		<button type="submit">Post Comment</button>
+	  </form>
+	  <div id="commentList">
+		<h4>Comments:</h4>
+		<ul id="comments"></ul>
+	  </div>
+	</div>
+	<!-- Contact Form -->
+        <div class="form-section">
+            <h2>Contact Us</h2>
+            <form>
+                <label for="name">Name</label>
+                <input type="text" id="name" placeholder="Your name">
+
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Your email">
+
+                <label for="message">Message</label>
+                <textarea id="message" rows="4" placeholder="Type your message..."></textarea>
+
+                <button type="submit">Send</button>
+            </form>
+        </div>
+
+        <!-- Booking Form -->
+        <div class="form-section">
+            <h2>Book a Room</h2>
+            <form>
+                <label for="guest-name">Guest Name</label>
+                <input type="text" id="guest-name" placeholder="Full name">
+
+                <label for="checkin">Check-in Date</label>
+                <input type="date" id="checkin">
+
+                <label for="checkout">Check-out Date</label>
+                <input type="date" id="checkout">
+
+                <label for="room-type">Room Type</label>
+                <select id="room-type">
+                    <option>Single</option>
+                    <option>Double</option>
+                    <option>Suite</option>
+                </select>
+
+                <button type="submit">Book Now</button>
+            </form>
+        </div>
+
+  <footer>
+    &copy; 2025 Paradise Living Hotel
+  </footer>
+  <script>
+	  let slideIndexes = [1, 1, 1, 1, 1, 1, 1, 1, 1]; // For Rooms, Facilities, Gallery
+    let slideIds = ["bedroomSlides", "barSlides", "RestaurantSlides", "MassageSlides", "gymSlides", "playgroundSlides", "golfSlides", "kayakSlides", "culturalSlides"];
+
+    function plusSlides(n, sliderIndex) {
+      showSlides(slideIndexes[sliderIndex] += n, sliderIndex);
+    }
+
+    function showSlides(n, sliderIndex) {
+      let slides = document.querySelectorAll(`#${slideIds[sliderIndex]} .slide`);
+      if (n > slides.length) { slideIndexes[sliderIndex] = 1 }
+      if (n < 1) { slideIndexes[sliderIndex] = slides.length }
+      slides.forEach((slide, i) => {
+        slide.style.display = (i === slideIndexes[sliderIndex] - 1) ? "block" : "none";
+      });
+    }
+
+    // Initialize all sliders
+    for (let i = 0; i < slideIds.length; i++) {
+      showSlides(1, i);
+    }
+</script>
+</body>
+</html>
